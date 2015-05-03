@@ -1,0 +1,92 @@
+@import url("reset.css");
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color:#333;
+
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+}
+
+p {
+    padding: 10px;
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+#navigationwrap {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+}
+
+#navigation {
+    height: 130px;
+    background: #FFF5F5;
+   /* border-radius: 10px;
+    border: 1px solid #ebe1e1;*/
+    margin: 5px;
+    background: #404040;
+    text align: center;
+
+
+
+}
+ul {
+    padding:10px;
+    color: white;
+    
+
+}
+a {
+    text-decoration: none;
+}
+
+#contentwrap {
+    width: 850px;
+    float: left;
+    margin: 0 auto;
+}
+
+#content {
+    background: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid #ebebeb;
+    margin: 5px;
+}
+
+#leftcolumnwrap {
+    width: 150px;
+    float: left;
+    margin: 0 auto;
+}
+
+#leftcolumn {
+    background: #BFCAD6;
+    border-radius: 10px;
+    border: 1px solid #abb6c2;
+    margin: 5px;
+}
+
+#footerwrap {
+    width: 1000px;
+    float: left;
+    margin: 0 auto;
+    clear: both;
+}
+
+#footer {
+    height: 40px;
+    background: #575C59;
+    border-radius: 10px;
+    border: 1px solid #434845;
+    margin: 5px;
+}
+
