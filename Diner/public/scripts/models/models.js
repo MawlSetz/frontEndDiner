@@ -24,3 +24,4 @@
 // 	li.innerText = name + " is a " + type;
 // 	ul.appendChild(li)
 // }
+
