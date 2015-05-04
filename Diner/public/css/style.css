@@ -1,4 +1,4 @@
-@import url("reset.css");
+
 
 body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -9,7 +9,6 @@ body {
     margin-right: 0px;
     margin-top: 0px;
     margin-bottom: 0px;
-
 }
 
 p {
@@ -27,14 +26,14 @@ p {
     margin: 0 auto;
 }
 
-#navigation {
-    height: 130px;
-    background: #FFF5F5;
-   /* border-radius: 10px;
-    border: 1px solid #ebe1e1;*/
-    margin: 5px;
-    background: #404040;
-    text align: center;
+.fixed-nav-bar{
+    position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 50px;
+  background-color: #00a087;
 
 
 
@@ -47,6 +46,7 @@ ul {
 }
 a {
     text-decoration: none;
+    display: inline-block;
 }
 
 #contentwrap {
