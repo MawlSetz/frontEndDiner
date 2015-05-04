@@ -25,3 +25,19 @@
 // 	ul.appendChild(li)
 // }
 
+var Dish = Backbone.Model.extend({
+    defaults: {
+        ID: "",
+        DishName: "",
+        Image_url: "",
+        Price: "",
+        Category_id:""
+    },
+    initialize: function () {
+        console.log('Dish has been intialized');
+    },
+    showAlert: function () {
+        alert('ID: ' + this.get('ID') + ', DishName: ' + this.get('DishName'));
+    }
+});
+});

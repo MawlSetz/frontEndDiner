@@ -14,3 +14,21 @@
 
 
 // document.getElementById("new_pet_button").addEventListener("click", petMaker)
+var DishCollection = Backbone.Collection.extend({
+    model: Dish,
+    url: '/dishes'
+    
+});
+var dishes = new DishCollection();
+// var appet = []
+// var appDish = new DishCollection
+// appDish.fetch(null, {
+// 	success: function(models, response){
+// 		response.forEach(function(item){
+// 			if(item.category_id === 2){
+	// appDish.add([item])
+// 				appet.push(item)
+// 			}
+// 		})
+// 	}
+// })
