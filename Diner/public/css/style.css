@@ -2,16 +2,7 @@
     margin-top: 250px;
 }
 
-body {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    color:#333;
 
-    margin-left: 0px;
-    margin-right: 0px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
 
 p {
     padding: 10px;
@@ -77,11 +68,18 @@ a {
     clear: both;
 }
 
-#footer {
-    height: 40px;
+footer {
+    height: 230px;
     background: #575C59;
-    border-radius: 10px;
-    border: 1px solid #434845;
-    margin: 5px;
+
+    
+    margin: 0px;
+}
+h6 {
+    color: white;
+    font-size: 16px;
+}
+#new{
+    margin: 35px;
 }
 

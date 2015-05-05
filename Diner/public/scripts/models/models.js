@@ -40,4 +40,3 @@ var Dish = Backbone.Model.extend({
         alert('ID: ' + this.get('ID') + ', DishName: ' + this.get('DishName'));
     }
 });
-});

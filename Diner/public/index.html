@@ -1,22 +1,15 @@
-
-
 <!DOCTYPE html>
-<html>
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>The Walking Fed</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
   	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src ="./scripts/script.js"></script>
-	  <script>
-		  $(function() {
-		    $( "#accordion" ).accordion();
-		  });
-	  </script>
+ 
 </head>
 <body>
  <div id="container">
@@ -37,9 +30,10 @@
 
 <div id="accordion">
 	<section id="meal">
+
   <h3>Section 1</h3>
   <div>
-    
+    <ul id="dishesList"></ul>
     
 	    <p>
 	    	askdfj
@@ -50,7 +44,7 @@
   <h3>Section 2</h3>
   <div>
   	<p>
-    <ul id='dishesList'></ul>
+    <ul id='dishesList' category:"1"></ul>
 	    
 	    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
 	    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
@@ -90,20 +84,29 @@
   </div>
 </div>
  
-		<div id="new">
+	
+
+<footer>
+	<div id="new">
 			<!-- create a new dish here -->
+			<h6>Add a new dish here: </h6>
 			<input id="newDish" placeholder="new dish name">
-			<input id="newCategory" placeholder="dish category">
+				<select id="category">
+	  				<option value="breakfast" id="meal">Breakfast</option>
+	  				<option value="lunch" id="meal">Lunch</option>
+	  				<option value="dinner" id="meal">Dinner</option>
+				</select>
+				<br>
 			<textarea id="newDescription">Enter description:</textarea>
+			<br>
 			<input id="newImgUrl" placeholder="new image url">
+			<br>
 			<input id="newPrice" placeholder="new price">
+			<br>
 			<button id="newEntree">Add new dish</button>
-
 		</div>
-		
-	</div>
-
-
+</footer>
+</div>
   <!-- ========= -->
   <!-- Libraries -->
   <!-- ========= -->
@@ -114,12 +117,12 @@
   <!-- local backbone files -->
   <script src="./scripts/models/models.js"></script>
   <script src="./scripts/collections/collections.js"></script>
-  <script src="./views/views.js"></script>
+  <script src="./scripts/views/views.js"></script>
   
   <!-- =============== -->
   <!-- Javascript -->
   <!-- =============== -->
-  <!-- <script src ="./scripts/script.js"></script> -->
+  
   
 </body>
 </html>
