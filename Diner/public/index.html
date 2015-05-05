@@ -30,67 +30,35 @@
 
 <div id="accordion">
 	<section id="meal">
+<ul id="allDishes">
+	</ul>
 
-  <h3>Section 1</h3>
-  <div>
-    <ul id="dishesList"></ul>
-    
-	    <p>
-	    	askdfj
-	    <ul id="breakfast"></ul>
-	    </p>
-  </div>
-</section>
   <h3>Section 2</h3>
   <div>
-  	<p>
-    <ul id='dishesList' category:"1"></ul>
-	    
-	    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-	    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-	    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-	    suscipit faucibus urna.
-	    </p>
-  </div>
-  <h3>Section 3</h3>
-  <div>
-  	<p>
-    <ul id="dinner"></ul>
-	    
-	    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-	    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-	    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-	    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-	    </p>
-		    <ul>
-		      <li>List item one</li>
-		      <li>List item two</li>
-		      <li>List item three</li>
-		    </ul>
-  </div>
-  <h3>Section 4</h3>
-  <div>
-    <p>
-    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-    mauris vel est.
-    </p>
-    <p>
-    Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
-    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos.
-    </p>
-  </div>
-</div>
+  	
+    <script type="text/template" id="showDish">
+	<span class="dish">
+	<h5><%= dish.name %></h5>
+	<p> <%= dish.description %> </p>
+	<img src='<%=dish.imgUrl %>'/>
+	<p><%= dish.price %></p>
+
+	</span>
+	</script>
+	   
  
-	
+	<div id = "contentArea">
+	</div>
+
+	<script type="text/template" id="kitchenTemplate">
+	<ul id="kitchenList"></ul>
+	</script>
 
 <footer>
 	<div id="new">
 			<!-- create a new dish here -->
 			<h6>Add a new dish here: </h6>
-			<input id="newDish" placeholder="new dish name">
+			<input id="newDishName" placeholder="new dish name">
 				<select id="category">
 	  				<option value="breakfast" id="meal">Breakfast</option>
 	  				<option value="lunch" id="meal">Lunch</option>
@@ -118,6 +86,7 @@
   <script src="./scripts/models/models.js"></script>
   <script src="./scripts/collections/collections.js"></script>
   <script src="./scripts/views/views.js"></script>
+  <script src = "./scripts/routes/routes.js"></script>
   
   <!-- =============== -->
   <!-- Javascript -->
