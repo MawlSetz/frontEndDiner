@@ -42,11 +42,65 @@
 //################
 //show dish view
 //###############
+var DishView = Backbone.View.extend({
+	tagName: 'li',
+	template: _.template($("#dishTemplate").html()),
+	events: { 
+    	"click button.deleteButton": "deleteDish",
+        "click button.editButton": "editDish",
+        "click button.updateButton": "updateDish"
+    },
+
+    //UPDATES a dish
+    updateDish: function() {
+    	var newName = this.$('#newDishName' + this.model.id).val();
+    	var newCategory = this.$('.category' + this.model.id).val();
+    	var newDescription = this.$('#newDescription' + this.model.id).val();
+    	var newImgUrl = this.$('#newImgUrl' + this.model.id).val();
+    	var newPrice = this.$('#newPrice' + this.model.id).val();
+
+    	this.model.set({name: newName, category: newCategory, description: newDescription, imgUrl: newImgUrl, price: newPrice});
+    	this.model.save();
+
+    },
+
+    //show Edit form
+    editDish: function() {
+    	this.$("span.dish").hide();
+    	this.$('span.editForm').show();
+    },
+
+    deleteDish: function() {
+    	this.model.destroy()
+    },
+
+    render: function() {
+    	this.$el.html(this.template({dish: this.model.toJSON()}));
+		return this;
+	}
+});
+//show a collection of dishes(kitchen)
+
+var KitchenView= Backbone.View.extend({
+	el: "ul#dishList",
+	initialize: function() {
+		this.listenTo(this.collection, "sync remove", this.render);
+	},
+	render: function() {
+		var kitchen = this.$el;
+		kitchen.html("");
+		this.collection.each(function(dish){
+			kitchen.append(new DishView({model: dish}).render().$el);
+		});
+		return this;
+	}
+});
+    
 
 
 
 
-//create new dish
+//adds events tp create new dish
 var CreateDishView = Backbone.View.extend({
 	el: "#addDishForm",
 	events: { 'click button#newEntree' : 'createDish' },
@@ -74,30 +128,8 @@ var CreateDishView = Backbone.View.extend({
 		}
 	});
 			
-var ShowDishView = Backbone.View.extend({
-	el: "#contentArea",
-	template: _.template($("#showDish").html()),
-	render: function(){
-		this.$el.html(this.template({pet: this.model.toJSON()}));
-		return this;
-	}
-});	
-//view all of the dishes
-// var AllDishView = Backbone.View.extend({
-// 		el: "",
-// 		initialize: function() {
-// 			this.listenTo(this.collection, "sync", this.render);
-// 		},
-// 		render: function() {
-// 			var attributes = this.model.toJSON();
-// 			this.$el.html(this.template(attributes));
-// 		}
-		
-// 	});
-
-	// var allDishView = new AllDishView({model: dish});
-	// allDishView.render();
-	// console.log(allDishView.el);
 
 
-new CreateDishView({collection: kitchen});
+	new KitchenView({collection: kitchen});
+	new CreateDishView({collection: kitchen});
+});

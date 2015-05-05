@@ -14,18 +14,20 @@ var DishRoutes = Backbone.Router.extend({
 		})
 	},
 	allDishes: function(){
-		var content = document.getElementById("contentArea");
-					content.innerHTML = "";
+		// var content = document.getElementById("contentArea");
+		// 			content.innerHTML = "";
 		kitchen.fetch({
 			success: function(model, response) {
-				response.forEach(function(pet){
+				var content = document.getElementById("contentArea");
+					content.innerHTML = "";
+				response.forEach(function(dish){
 					var content = document.getElementById("contentArea");
 					content.innerHTML = "";
 					var ul = document.getElementById("allDishes");
 					var li =document.createElement('li');
 					var a = document.createElement('a');
-					a.href = "#dishes/" + this.dish.id;
-					a.innerText = this.dish.name;
+					a.href = "#dishes/" + dish.id;
+					a.innerText = dish.name;
 					ul.appendChild(li);
 					li.appendChild(a);
 				})
