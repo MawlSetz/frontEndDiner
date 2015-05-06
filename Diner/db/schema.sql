@@ -12,6 +12,7 @@ CREATE TABLE dishes (
   id INTEGER PRIMARY KEY,
   name TEXT,
   image_url TEXT,
+  description TEXT,
   price INTEGER,
   category_id INTEGER,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

@@ -26,7 +26,6 @@
 // }
 
 
-
 var Dish = Backbone.Model.extend({
 	urlRoot: '/dishes',
     initialize: function(){
@@ -35,7 +34,6 @@ var Dish = Backbone.Model.extend({
         	console.log('A change was made')
         });
     }
-    // showAlert: function () {
-    //     alert('ID: ' + this.get('ID') + ', DishName: ' + this.get('DishName'));
-    // }
+   
 });
+
