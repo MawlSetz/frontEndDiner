@@ -1,4 +1,3 @@
-console.log('linkedRoutes');
 var DishRoutes = Backbone.Router.extend({
 	routes: {
 		"": "allDishes",
@@ -55,6 +54,7 @@ var DishRoutes = Backbone.Router.extend({
 		// 			content.innerHTML = "";
 		kitchen.fetch({
 			success: function(model, response) {
+				debugger;
 				new KitchenView({collection: kitchen}).render();
 			}
 		});

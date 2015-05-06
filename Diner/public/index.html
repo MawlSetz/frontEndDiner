@@ -12,21 +12,23 @@
  
 </head>
 <body>
- <div id="container">
-
-	  	<nav class="fixed-nav-bar">
-
-	  		<ul>
-	  			<li><a href="#">ABOUT</a>
-	  			</li>
-	  			<li><a href="#">MENU</a>
-	  			</li>
-	  			<li><a href="#">PRESS</a>
-	  			</li>
-	  			<li><a href="#">CONTACT</a>
-	  			</li>
-	  		</ul>
-	  	</nav>
+<div id="container">
+	<nav class="fixed-nav-bar">
+	  	<div id="img">
+	  		<img src='http://www.netanimations.net/xwqyf.gif'/>
+	  	</div>
+	  	<ul>
+  			<li><a href="#">ABOUT</a>
+  			</li>
+  			<li><a href="#">MENU</a>
+  			</li>
+  			<li><a href="#">PRESS</a>
+  			</li>
+  			<li><a href="#">CONTACT</a>
+  			</li>
+	  	</ul>
+	  	<h1> RICK'S DINER <h1>
+	</nav>
 
 
 
@@ -35,8 +37,8 @@
 	<ul id="dishList">
 	</ul>
 
-  <h3>Section 2</h3>
-  <div id>
+  <h3>Breakfast</h3>
+  <div id=new>
   	
     <script type="text/template" id="showDish">
 		<span class="dish">
@@ -47,19 +49,56 @@
 
 		</span>
 	</script>
-	   
+	   </div>
  
 	<div id = "contentArea">
 
+	<script type="text/template" id="dishTemplate">
+	      // <span class="dish">
+		        // <%= dish.name %> 
+		        // <br>
+		        // <%= dish.category_id %> 
+		        // <br>
+		        // <%= dish.img_url %>
+		        // <br>
+		        // <%= dish.description %>
+		        // <br>
+		        // <%= dish.price %> 
+		        // <br>
+		     <%= dish.name %></br>
+			<p>
+			<%= dish.description %>
+			</p></br>
+			<p><%= dish.price %></p></br>
+			<img src='<%= dish.img_url %>'/>
+			
+		        <button class = "editButton">Edit</button>
+		        <button class = "deleteButton">Delete</button>
+	      // </span>
+	      // <span class= "editForm" style = "display: none">
+	        <input type = "text" id = "newName<%= dish.id %>" value = "<%= dish.name %>">
+	        <input type= "text" id = "newCategory<%= dish.id %>" value = "<%= dish.category_id %>">
+	         <input type= "text" id = "newDescription<%= dish.id %>" value = "<%= dish.description %>">
+	          <input type= "text" id = "newImgUrl<%= dish.id %>" value = "<%= dish.img_url %>">
+	           <input type= "text" id = "newPrice<%= dish.id %>" value = "<%= dish.price %>">
+	        <button class= "updateButton">Update</button>
+	      </span>
+      </script>
+
+		<script type="text/template" id="kitchenTemplate">
+			<%= dish.name %></br>
+			<p>
+			<%= dish.description %>
+			</p></br>
+			<p><%= dish.price %></p></br>
+			<img src='<%= dish.img_url %>'/>
+
+
+
+		</script>
 	</div>
 
-	<script type="text/template" id="kitchenTemplate">
-		<%= dish.name %></br>
 
-
-	</script>
-
-<footer>
 	<div id="addDishForm">
 			<!-- create a new dish here -->
 			<h6>Add a new dish here: </h6>
@@ -103,7 +142,7 @@
 	        <button class= "updateButton">Update</button>
 	      </span>
       </script>
-</footer>
+<footer></footer>
 </div>
   <!-- ========= -->
   <!-- Libraries -->
