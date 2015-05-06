@@ -1,3 +1,4 @@
+console.log("collections");
 var DishesCollection = Backbone.Collection.extend({
 	model: Dish,
 	url: '/dishes'

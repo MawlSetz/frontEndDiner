@@ -27,7 +27,8 @@
   			<li><a href="#">CONTACT</a>
   			</li>
 	  	</ul>
-	  	<h1> RICK'S DINER <h1>
+	  	<hr>
+	  	<h1 > RICK'S DINER <h1>
 	</nav>
 
 
@@ -71,7 +72,7 @@
 			</p></br>
 			<p><%= dish.price %></p></br>
 			<img src='<%= dish.img_url %>'/>
-			
+
 		        <button class = "editButton">Edit</button>
 		        <button class = "deleteButton">Delete</button>
 	      // </span>
@@ -142,25 +143,31 @@
 	        <button class= "updateButton">Update</button>
 	      </span>
       </script>
-<footer></footer>
-</div>
+<footer>
+	<hr>
+	<p>Thank you for choosing Rick's Diner</p>
+	<hr>
+</footer>
+
   <!-- ========= -->
   <!-- Libraries -->
   <!-- ========= -->
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="http://documentcloud.github.com/underscore/underscore-min.js"></script>
 	<script src="http://documentcloud.github.com/backbone/backbone-min.js"></script>
+
   
   <!-- local backbone files -->
- <script src="./scripts/views/views.js"></script>
+ 
  <script src="./scripts/models/models.js"></script>
  <script src="./scripts/collections/collections.js"></script>
+ <script src="./scripts/views/views.js"></script>
  <script src = "./scripts/routes/routes.js"></script>
   
   <!-- =============== -->
   <!-- Javascript -->
   <!-- =============== -->
   
-  
+</div>  
 </body>
 </html>

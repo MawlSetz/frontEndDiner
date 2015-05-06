@@ -1,3 +1,4 @@
+console.log('routes');
 var DishRoutes = Backbone.Router.extend({
 	routes: {
 		"": "allDishes",
@@ -46,16 +47,16 @@ var DishRoutes = Backbone.Router.extend({
 		$('#newPrice').val("");
 
 		//reroute to '/'
-		
-		
 	},
 	allDishes: function(){
 		// var content = document.getElementById("contentArea");
 		// 			content.innerHTML = "";
+		console.log(this);
 		kitchen.fetch({
 			success: function(model, response) {
-				debugger;
-				new KitchenView({collection: kitchen}).render();
+				console.log(this);
+				console.log(model);
+				new KitchenView({model: model}).render();
 			}
 		});
 	}

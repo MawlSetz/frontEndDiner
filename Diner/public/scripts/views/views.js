@@ -1,4 +1,4 @@
-console.log('linked');
+console.log('linked2');
 var DishView = Backbone.View.extend({
 		tagName: 'li',
 		template: _.template($("#kitchenTemplate").html()),
@@ -10,6 +10,7 @@ var DishView = Backbone.View.extend({
 
 	    //UPDATES a dish
 	    updateDish: function() {
+	    	console.log('helloLine13')
 	    	var newName = this.$('#newDishName' + this.model.id).val();
 	    	var newCategory = this.$('.category' + this.model.id).val();
 	    	var newDescription = this.$('#newDescription' + this.model.id).val();
@@ -42,15 +43,20 @@ var KitchenView = Backbone.View.extend({
 	el: "div#contentArea",
 	template: _.template($('#kitchenTemplate').html()),
 	initialize: function(){
-		this.listenTo(this.collection, "sync remove", this.render);	
+		console.log(this);
+		console.log(this.model);
+
+		this.listenTo(kitchen, "sync remove", this.render);	
 	},
 	render: function() {
-		var kitchen = this.$el;
-		kitchen.html("");
+		var kitC = this.$el;
+		kitC.html("");
 		var self= this;
-		this.collection.forEach(function(dish){
-			kitchen.append(self.template({dish: dish.toJSON()}));
+		console.log(this);
+		kitchen.forEach(function(dish){
+			kitC.append(self.template({dish: dish.toJSON()}));
 		});
+		console.log(this);
 		return this;
 	}				
 });
@@ -101,7 +107,8 @@ var KitchenView = Backbone.View.extend({
 				
 
 
- // new KitchenView({collection: kitchen});
+ new KitchenView;
+ new DishView;
 
     
 

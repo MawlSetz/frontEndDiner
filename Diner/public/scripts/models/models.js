@@ -24,7 +24,7 @@
 // 	li.innerText = name + " is a " + type;
 // 	ul.appendChild(li)
 // }
-
+console.log("models");
 
 var Dish = Backbone.Model.extend({
 	urlRoot: '/dishes',
@@ -32,8 +32,31 @@ var Dish = Backbone.Model.extend({
         console.log('Dish has been intialized');
         this.on('change', function(){
         	console.log('A change was made')
-        });
+        })
+        dishListener(this);
+    },
+    defaults:{
+    	name: 'Dish1',
+    	description: 'Dish description',
+    	img_url: 'http://lorempixel.com/300/300',
+    	price: '$10.00'
+    },
+    conso: function(){
+    	console.log("end of DishModel");
     }
    
 });
 
+var dishListener = function(dish){
+	var ul = document.getElementById("showDish");
+	var name = dish.attributes.name;
+	var description = dish.attributes.description;
+	var img_url = dish.attributes.img_url;
+	var price = dish.attributes.price;
+	var li = document.createElement('li');
+	li.innterText = name + "<br>" + description + "<br><img src=" + img_url + "/><br>" + price;
+	ul.appendChild(li)
+}
+
+
+	

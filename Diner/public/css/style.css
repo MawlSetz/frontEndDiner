@@ -3,6 +3,7 @@
 }
 body{
     margin: 0;
+    background-color: #404040;
 }
 
 
@@ -31,7 +32,10 @@ p {
     padding: 20px;
     font-family: Verdana;
     font-size: 16px;
-    margin: 0
+    margin: 0;
+    color: #404040;
+    text-decoration: none;
+
  }
   .fixed-nav-bar ul{
     margin:0;
@@ -60,7 +64,7 @@ a {
 h3 {
     padding-left: 30px;
     font-family: Verdana;
-    
+
 }
 
 #leftcolumn {
@@ -78,11 +82,15 @@ h3 {
 }
 
 footer {
-    height: 230px;
+    height: 100px;
     background: #575C59;
-
-    
     margin: 0px;
+    color: white;
+    text-align: center;
+    padding-top:30px;
+    font-family: Helvetica;
+    font-size: 10px;
+
 }
 h6 {
     
@@ -99,4 +107,7 @@ div#img{
 }
 div#new{
     padding-left: 30px
+}
+hr{
+    width:75%;
 }
